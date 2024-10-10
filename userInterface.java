@@ -5,7 +5,8 @@ import java.util.List;
 
 public class userInterface extends Frame implements ActionListener{
     private JLabel l1; 
-    private JLabel l2; 
+    private JLabel l2;
+    private JTextField textBar; 
     private JButton b;
     private GeneratePassword passwordMaker;
     private int passLength;
@@ -24,7 +25,7 @@ public class userInterface extends Frame implements ActionListener{
         b = new JButton("Submit");
         copyPaste = new JButton("Copy");
         JLabel l3 = new JLabel("Use the slider to input password length");
-        l2 = new JLabel();
+        textBar = new JTextField();
         sl = new JSlider(JSlider.HORIZONTAL,4,20,passLength);
 
 
@@ -43,7 +44,7 @@ public class userInterface extends Frame implements ActionListener{
         });
 
         l1.setBounds(50,50,300,30);
-        l2.setBounds(50,350,200,30);
+        textBar.setBounds(50,350,200,30);
         copyPaste.setBounds(250, 350, 200, 30);
         l3.setBounds(50, 100, 300, 30);
 
@@ -53,7 +54,7 @@ public class userInterface extends Frame implements ActionListener{
 
         // Add each of the items to the JFrame
         f.add(l1);
-        f.add(l2);
+        f.add(textBar);
         f.add(b);
         f.add(sl);
         f.add(l3);
@@ -72,10 +73,10 @@ public class userInterface extends Frame implements ActionListener{
         try{
             if(e.getSource() == b){
                 System.out.println("Password");  
-                l2.setText(passwordMaker.generateRandomPassword());
+                textBar.setText(passwordMaker.generateRandomPassword());
             }
             else if(e.getSource()== copyPaste){
-                copyToClipboard.copy(l2.getText());
+                copyToClipboard.copy(textBar.getText());
             }
         }
         catch(Exception ex)
