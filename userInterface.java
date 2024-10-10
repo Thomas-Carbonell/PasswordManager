@@ -21,6 +21,7 @@ public class userInterface extends Frame implements ActionListener{
         // Initialise the global variables with the labels and buttons
         l1 = new JLabel("Click the Button to Generate a Password");
         b = new JButton("Submit");
+        JLabel l3 = new JLabel("Use the slider to input password length");
         l2 = new JLabel();
 
         sl = new JSlider(JSlider.HORIZONTAL,4,20,passLength);
@@ -28,7 +29,7 @@ public class userInterface extends Frame implements ActionListener{
 
 
         // Positioning for the Labels and buttons
-        b.setBounds(50, 100, 100, 50);
+        b.setBounds(50, 300, 100, 50);
         sl.setBounds(50,200,200,50);
         sl.setMajorTickSpacing(2);
         sl.setMinorTickSpacing(1);
@@ -41,7 +42,8 @@ public class userInterface extends Frame implements ActionListener{
         });
 
         l1.setBounds(50,50,300,30);
-        l2.setBounds(50,150,200,30);
+        l2.setBounds(50,350,200,30);
+        l3.setBounds(50, 100, 300, 30);
 
         // Add action listener to the button
         b.addActionListener(this);
@@ -51,6 +53,7 @@ public class userInterface extends Frame implements ActionListener{
         f.add(l2);
         f.add(b);
         f.add(sl);
+        f.add(l3);
 
         // Setting the size, layout an visibility of the frame
         f.setSize(500,500);
