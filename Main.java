@@ -4,7 +4,6 @@ import java.util.List;
  * Improve UI
  * Allow ability to select which kinds of characters are used in the password
  * Allow ability to edit given passwords
- * Allow ability to add values to the PC clipboard.
  * Comment all current code with Javadoc comments
  * Consider the following:
  * Password Storage
