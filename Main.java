@@ -15,10 +15,9 @@ public class Main {
         try {
             readTxt file = new readTxt("AllowedCharacters.txt");
             charArray = file.readFile();
-            userInterface ui = new userInterface(10, charArray);
             GeneratePassword pass = new GeneratePassword(10, charArray);
-            String Password = pass.ReturnPassword();
-            System.out.println(Password);
+            userInterface ui = new userInterface(pass);
+
         } catch (Exception e) {
             System.err.println(e);
         }
